@@ -1,0 +1,22 @@
+#!/bin/sh
+# codemap-hook
+# [codemap] Mark codemap stale on branch switch (3rd arg = 1 means branch checkout)
+PLUGIN_DIR="$HOME/.claude/plugins/codemap"
+VENV_PYTHON="$PLUGIN_DIR/.venv/bin/python3"
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+META="$PROJECT_ROOT/docs/codemap/meta.json"
+
+# Skip if venv not set up yet
+[ -f "$VENV_PYTHON" ] || exit 0
+
+if [ "$3" = "1" ] && [ -f "$META" ]; then
+  "$VENV_PYTHON" -c "
+import json, sys
+with open(sys.argv[1]) as f:
+    meta = json.load(f)
+meta['stale'] = True
+with open(sys.argv[1], 'w') as f:
+    json.dump(meta, f, indent=2)
+    f.write('\n')
+" "$META"
+fi
