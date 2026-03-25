@@ -1,0 +1,11 @@
+{
+  "name": "workshop-setup",
+  "version": "1.0.0",
+  "description": "Guided Flutter development environment setup for non-technical workshop participants",
+  "author": {
+    "name": "tinqr"
+  },
+  "repository": "https://github.com/tinqr/workshop-setup",
+  "license": "MIT",
+  "keywords": ["workshop", "flutter", "setup", "onboarding"]
+}

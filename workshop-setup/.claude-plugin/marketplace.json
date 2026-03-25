@@ -1,0 +1,17 @@
+{
+  "name": "tinqr-workshop-setup",
+  "owner": {
+    "name": "tinqr"
+  },
+  "metadata": {
+    "description": "Guided Flutter development environment setup for non-technical workshop participants"
+  },
+  "plugins": [
+    {
+      "name": "workshop-setup",
+      "source": "./",
+      "description": "Walks designers and PMs through installing Xcode/Android Studio, Homebrew, Flutter, and building an app on their phone",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tinqr",
+  "owner": {
+    "name": "tinqr"
+  },
+  "metadata": {
+    "description": "Plugins by tinqr -- tools for prototyping, knowledge management, and codebase navigation"
+  },
+  "plugins": [
+    {
+      "name": "workshop-setup",
+      "source": "./workshop-setup",
+      "description": "Guided Flutter dev environment setup for non-technical workshop participants",
+      "version": "1.0.0"
+    }
+  ]
+}
