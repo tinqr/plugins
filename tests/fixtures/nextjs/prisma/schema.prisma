@@ -1,0 +1,23 @@
+model Tenant {
+  id     String  @id @default(cuid())
+  name   String
+  slug   String  @unique
+  orders Order[]
+}
+
+model Order {
+  id       String          @id @default(cuid())
+  tenantId String
+  tenant   Tenant          @relation(fields: [tenantId], references: [id])
+  items    OrderLineItem[]
+  total    Float
+}
+
+model OrderLineItem {
+  id       String @id @default(cuid())
+  orderId  String
+  order    Order  @relation(fields: [orderId], references: [id])
+  name     String
+  price    Float
+  quantity Int
+}

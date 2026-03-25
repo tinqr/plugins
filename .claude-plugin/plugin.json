@@ -1,0 +1,10 @@
+{
+  "name": "codemap",
+  "version": "1.4.0",
+  "description": "Auto-generated codebase context for AI agents — tree-sitter parsing, PageRank ranking, incremental updates, zero-config setup",
+  "author": {
+    "name": "tinqr"
+  },
+  "repository": "https://github.com/tinqr/codemap",
+  "license": "MIT"
+}

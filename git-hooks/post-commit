@@ -1,0 +1,15 @@
+#!/bin/sh
+# codemap-hook
+# [codemap] Incremental codemap update after each commit
+# Installed by: codemap setup
+PLUGIN_DIR="$HOME/.claude/plugins/codemap"
+VENV_PYTHON="$PLUGIN_DIR/.venv/bin/python3"
+CODEMAP_CLI="$PLUGIN_DIR/scripts/codemap_cli.py"
+PROJECT_ROOT="$(git rev-parse --show-toplevel)"
+
+# Skip if venv not set up yet
+[ -f "$VENV_PYTHON" ] || exit 0
+
+if [ -f "$PROJECT_ROOT/docs/codemap/meta.json" ]; then
+  "$VENV_PYTHON" "$CODEMAP_CLI" incremental "$PROJECT_ROOT" 2>>"$PROJECT_ROOT/.codemap-errors.log" &
+fi
