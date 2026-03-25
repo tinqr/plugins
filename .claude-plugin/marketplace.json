@@ -12,6 +12,18 @@
       "source": "./workshop-setup",
       "description": "Guided Flutter dev environment setup for non-technical workshop participants",
       "version": "1.0.0"
+    },
+    {
+      "name": "codemap",
+      "source": "./codemap",
+      "description": "Auto-generated codebase context for AI agents -- tree-sitter parsing, PageRank ranking, incremental updates, zero-config setup",
+      "version": "1.4.0"
+    },
+    {
+      "name": "marrow",
+      "source": "./marrow",
+      "description": "Standalone knowledge store and session management for AI-assisted project work",
+      "version": "0.5.2"
     }
   ]
 }
