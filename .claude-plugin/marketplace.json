@@ -22,8 +22,8 @@
     {
       "name": "marrow",
       "source": "./marrow",
-      "description": "Standalone knowledge store and session management for AI-assisted project work",
-      "version": "0.5.2"
+      "description": "Persistent memory for AI coding tools",
+      "version": "1.0.0"
     }
   ]
 }
