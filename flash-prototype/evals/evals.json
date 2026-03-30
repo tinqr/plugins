@@ -1,0 +1,67 @@
+{
+  "skill_name": "flash-prototype",
+  "evals": [
+    {
+      "id": 1,
+      "name": "adapt-wireframe-light-screen",
+      "prompt": "I wireframed a savings goal tracker in Figma yesterday. It's a simple white screen with a progress ring, some text, and a green button at the bottom. The Figma file is aIPVqxi0yYCQL5Er7aQt92 node 2349:1407. Adapt it for Flash prototypes so it looks like it belongs in the app.",
+      "expected_output": "A design_spec.md with light palette, Flash token mappings, no contrast violations",
+      "skill": "adapt",
+      "assertions": [
+        {"text": "Spec classifies screen as light/white palette (not dark)", "type": "qualitative"},
+        {"text": "dayBreak is NOT used for text on the white background (contrast violation)", "type": "qualitative"},
+        {"text": "Green wireframe button maps to PrimaryButton or ElevatedButton using theme defaults", "type": "qualitative"},
+        {"text": "All colors reference Flash color.dart tokens -- no raw hex values in the mapping", "type": "qualitative"},
+        {"text": "Typography mapped to textTheme style names (displayLarge, titleLarge, etc.)", "type": "qualitative"},
+        {"text": "Output follows the design_spec.md template structure with sections for colors, typography, components", "type": "qualitative"}
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "adapt-wireframe-dark-header",
+      "prompt": "Here's my wireframe for a daily market snapshot. It has a dark header area at the top with a date and summary cards, then white content below with a list of market movers. Figma file Cmr9tEIbWHCOXiXuhoaIX5 node 4642:1940. Adapt this for Flash.",
+      "expected_output": "A design_spec.md with mixed palette classification, correct dark/light section tokens, no contrast violations",
+      "skill": "adapt",
+      "assertions": [
+        {"text": "Spec identifies mixed screen (dark header + light content)", "type": "qualitative"},
+        {"text": "Dark header section uses darkNight or primary for background, white or dayBreak for text", "type": "qualitative"},
+        {"text": "Light content section uses white background with primary for text (not dayBreak)", "type": "qualitative"},
+        {"text": "Contrast rules respected at the dark/light boundary -- no dayBreak on white bg", "type": "qualitative"},
+        {"text": "Component mapping present -- wireframe elements mapped to Flash components where applicable", "type": "qualitative"}
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "extract-production-design",
+      "prompt": "Extract the Buy Gold education sheet design from Figma. File aIPVqxi0yYCQL5Er7aQt92 node 10160:106. This is a polished production design -- match tokens precisely.",
+      "expected_output": "A design_spec.md with precise hex-to-token matching, flagged unknowns, subagent extraction",
+      "skill": "extract",
+      "assertions": [
+        {"text": "Colors matched to nearest Flash token by hex proximity (precise matching, not creative adaptation)", "type": "qualitative"},
+        {"text": "Non-matching colors flagged with FLAGGED comment rather than silently assigned", "type": "qualitative"},
+        {"text": "Extraction dispatched to subagent (not done inline in main conversation)", "type": "qualitative"},
+        {"text": "Figma node IDs preserved in spec for fix cycles", "type": "qualitative"},
+        {"text": "Spacing values extracted from Figma (exact px, not invented)", "type": "qualitative"}
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "build-from-spec",
+      "prompt": "Build the savings goal tracker prototype. It should show a progress ring toward a savings target of 85,000 EGP (currently at 42,500 EGP), a 'New MacBook Pro' goal name, recent contributions list, and an 'Add Money' button at the bottom.",
+      "expected_output": "Flutter prototype with correct structure, dumb widgets, Flash tokens, launcher registration",
+      "skill": "build",
+      "assertions": [
+        {"text": "Correct directory structure: lib/prototypes/savings_goal/ with models/, providers/, widgets/ subdirectories", "type": "programmatic"},
+        {"text": "Widget files contain NO Riverpod imports (no ref, no Provider, no ConsumerWidget)", "type": "programmatic"},
+        {"text": "Code imports flash/theme/color.dart -- no hardcoded hex color values like Color(0xFF...)", "type": "programmatic"},
+        {"text": "Text styles use Theme.of(context).textTheme.* -- no raw TextStyle() constructors with fontSize", "type": "programmatic"},
+        {"text": "main.dart updated with a FeatureGroup/PrototypeEntry for the savings goal tracker", "type": "programmatic"},
+        {"text": "Mock data uses EGP amounts (85000, 42500 or similar Egyptian currency values)", "type": "programmatic"}
+      ],
+      "files": []
+    }
+  ]
+}

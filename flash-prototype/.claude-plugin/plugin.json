@@ -1,0 +1,12 @@
+{
+  "name": "flash-prototype",
+  "version": "1.0.0",
+  "description": "Flash prototype building toolkit -- extract production Figma designs, adapt wireframes to Flash's visual language, and build Flutter prototypes using production tokens and components.",
+  "author": {
+    "name": "tinqr",
+    "url": "https://github.com/tinqr"
+  },
+  "repository": "https://github.com/tinqr/flash-prototype",
+  "license": "MIT",
+  "keywords": ["flash", "flutter", "prototype", "figma", "design-to-code", "wireframe"]
+}

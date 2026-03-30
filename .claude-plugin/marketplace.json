@@ -24,6 +24,12 @@
       "source": "./marrow",
       "description": "Persistent memory for AI coding tools",
       "version": "1.0.0"
+    },
+    {
+      "name": "flash-prototype",
+      "source": "./flash-prototype",
+      "description": "Flash prototype building toolkit -- extract Figma designs, adapt wireframes, build Flutter prototypes with production tokens and components",
+      "version": "1.0.0"
     }
   ]
 }
